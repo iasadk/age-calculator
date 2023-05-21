@@ -1,0 +1,449 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: poppins-bold;
+    src: url(/assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: poppins-bold-italic;
+    src: url(/assets/fonts/Poppins-Italic.ttf);
+}
+
+@font-face {
+    font-family: poppins-extrabold;
+    src: url(/assets/fonts/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: poppins-extrabold-italic;
+    src: url(/assets/fonts/Poppins-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+    font-family: poppins-itallic;
+    src: url(/assets/fonts/Poppins-Italic.ttf);
+}
+
+@font-face {
+    font-family: poppins-regular;
+    src: url(/assets/fonts/Poppins-Regular.ttf);
+}
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --input-font: 32px
+}
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: var(--Purple);
+}
+
+::selection {
+    color: white;
+    background: var(--Purple);
+}
+
+body {
+    font-family: "poppins-regular";
+    display: grid;
+    place-content: center;
+    background-color: var(--Off-white);
+    height: 100vh;
+}
+
+.main-wrapper {
+    background-color: var(--White);
+    width: 700px;
+    height: max-content;
+    border-radius: 20px 20px 140px 20px;
+    padding: 2.8rem;
+    transition: all .5s ease;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+form .input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+form .input-wrapper label {
+    font-family: "poppins-bold";
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--Smokey-grey);
+    letter-spacing: 3px;
+    margin-bottom: .25rem;
+}
+
+form .input-wrapper input {
+    width: 140px;
+    font-family: "poppins-extrabold";
+    padding: .75rem 1.3rem;
+    font-size: var(--input-font);
+    border-radius: 10px;
+    border: 1px solid var(--Light-grey);
+    outline: none;
+    caret-color: var(--Purple);
+    color: var(--Off-black);
+
+}
+
+form .input-wrapper input:focus {
+    outline: var(--Purple);
+    border: 1px solid var(--Purple);
+}
+
+form .input-wrapper.throw-error input {
+    border: 1px solid var(--Light-red);
+}
+
+form .input-wrapper.throw-error label {
+    color: var(--Light-red);
+}
+
+form .submit-btn {
+    position: absolute;
+    bottom: -90px;
+    right: 0;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: var(--Purple);
+    outline: none;
+    border: none;
+    transition: background-color .5s ease;
+    cursor: pointer;
+}
+
+form .submit-btn:hover, .submit-btn:focus {
+    background-color: var(--Off-black);
+}
+
+form .submit-btn::before {
+    position: absolute;
+    content: '';
+    width: 522px;
+    height: .5px;
+    background-color: var(--Light-grey);
+    left: -522px;
+    top: 50%;
+
+}
+
+form .error {
+    font-size: 11px;
+    font-family: "poppins-itallic";
+    margin: 10px;
+    color: var(--Light-red);
+    display: inline-block;
+}
+
+.result-section {
+    margin-top: 5rem;
+}
+
+.number-text, .result-type {
+    font-size: 5rem;
+    font-family: "poppins-extrabold-italic";
+    line-height: 85px;
+    color: var(--Off-black);
+}
+
+.number-text {
+    color: var(--Purple);
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* body {
+        background-color: lightblue;
+    } */
+
+    .main-wrapper {
+        width: 500px;
+        padding: 1.5rem;
+        border-radius: 20px 20px 120px 20px;
+    }
+
+    form {
+        gap: 30px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    form .input-wrapper input {
+        width: 120px;
+        font-family: "poppins-extrabold";
+        padding: .75rem;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 1px solid var(--Light-grey);
+        outline: none;
+        caret-color: var(--Purple);
+        color: var(--Off-black);
+    }
+
+    form .submit-btn {
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: -130px;
+        transform-style: preserve-3d;
+
+    }
+
+    form .submit-btn::before {
+        width: 445px;
+        left: -181px;
+        transform: translateZ(-1px);
+    }
+
+    .result-section {
+        margin-top: 7rem;
+    }
+
+    .number-text, .result-type {
+        font-size: 60px;
+    }
+
+    form .error {
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 546px) {
+    /* body {
+        background-color: lightblue;
+    } */
+
+    .main-wrapper {
+        width: 400px;
+        padding: 1rem;
+        border-radius: 20px 20px 120px 20px;
+    }
+
+    form {
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    form .input-wrapper input {
+        width: 100px;
+        font-family: "poppins-extrabold";
+        padding: .75rem;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 1px solid var(--Light-grey);
+        outline: none;
+        caret-color: var(--Purple);
+        color: var(--Off-black);
+    }
+
+    form .submit-btn {
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: -130px;
+        transform-style: preserve-3d;
+
+    }
+
+    form .submit-btn::before {
+        width: 365px;
+        left: -143px;
+        transform: translateZ(-1px);
+    }
+
+    .result-section {
+        margin-top: 7rem;
+    }
+
+    .number-text, .result-type {
+        font-size: 50px;
+        line-height: 60px;
+
+    }
+
+    form .error {
+        margin: 5px 0;
+        width: 90px;
+    }
+}
+
+@media only screen and (max-width: 546px) {
+    /* body {
+        background-color: lightblue;
+    } */
+
+    .main-wrapper {
+        width: 400px;
+        padding: 1rem;
+        border-radius: 20px 20px 120px 20px;
+    }
+
+    form {
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    form .input-wrapper input {
+        width: 100px;
+        font-family: "poppins-extrabold";
+        padding: .75rem;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 1px solid var(--Light-grey);
+        outline: none;
+        caret-color: var(--Purple);
+        color: var(--Off-black);
+    }
+
+    form .submit-btn {
+        right: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: -130px;
+        transform-style: preserve-3d;
+
+    }
+
+    form .submit-btn::before {
+        width: 365px;
+        left: -143px;
+        transform: translateZ(-1px);
+    }
+
+    .result-section {
+        margin-top: 7rem;
+    }
+
+    .number-text, .result-type {
+        font-size: 50px;
+        line-height: 60px;
+
+    }
+
+    form .error {
+        margin: 5px 0;
+        width: 90px;
+    }
+}
+
+@media only screen and (max-width: 443px) {
+    /* body {
+        background-color: lightblue;
+    } */
+
+    .main-wrapper {
+        width: 380px;
+        padding: 1rem;
+        border-radius: 20px 20px 120px 20px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    /* body {
+        background-color: lightblue;
+    } */
+
+    .main-wrapper {
+        width: 320px;
+        padding: 1rem;
+        border-radius: 20px 20px 120px 20px;
+    }
+
+    form {
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    form .input-wrapper input {
+        width: 80px;
+        padding: .75rem;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+    .number-text, .result-type {
+        font-size: 40px;
+        line-height: 60px;
+
+
+    }
+
+    form .submit-btn::before {
+        width: 280px;
+        left: -96px;
+        transform: translateZ(-1px);
+    }
+
+
+}
+@media only screen and (max-width: 343px) {
+    /* body {
+        background-color: lightblue;
+    } */
+
+    .main-wrapper {
+        width: 300px;
+        padding: 1rem;
+        border-radius: 20px 20px 120px 20px;
+    }
+
+    form {
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    form .input-wrapper input {
+        width: 80px;
+        padding: .75rem;
+        font-size: 20px;
+        border-radius: 10px;
+    }
+
+    .number-text, .result-type {
+        font-size: 40px;
+        line-height: 60px;
+
+
+    }
+
+    form .submit-btn::before {
+        width: 280px;
+        left: -96px;
+        transform: translateZ(-1px);
+    }
+
+
+}

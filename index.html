@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Age calculator app</title>
+    <script src="app.js" defer></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-wrapper">
+        <form action="#" method="post">
+          <div class="input-wrapper day-input-wrapper">
+            <label for="day">Day</label>
+            <input type="text" name="day" id="day" placeholder="DD" autocomplete="off">
+            <span class="error day-error"></span>
+          </div>
+          <div class="input-wrapper month-input-wrapper">
+            <label for="month">Month</label>
+            <input type="text" name="month" id="month" placeholder="MM" autocomplete="off">
+            <span class="error month-error"></span>
+          </div>
+          <div class="input-wrapper year-input-wrapper">
+            <label for="year">Year</label>
+            <input type="text" name="year" id="year" placeholder="YYYY" autocomplete="off">
+            <span class="error year-error"></span>
+          </div>
+          <button type="submit" class="submit-btn">
+            <img src="/assets/images/icon-arrow.svg" alt="Submit-Button">
+          </button>
+        </form>
+        <div class="result-section">
+          <div class="result-text">
+            <span class="number-text year-placeholder">- - </span>
+            <span class="result-type">years</span>
+          </div>
+          <div class="result-text">
+            <span class="number-text month-placeholder">- - </span>
+            <span class="result-type">months</span>
+          </div>
+          <div class="result-text">
+            <span class="number-text day-placeholder">- - </span>
+            <span class="result-type">days</span>
+          </div>
+        </div>
+      <!-- Day DD Month MM Year YYYY  -- months -- days -->
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/iasadk" target="_blank">Mohammad Asad Khan</a>.
+    </div>
+  </body>
+</html>
